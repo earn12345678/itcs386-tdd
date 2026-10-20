@@ -2,7 +2,7 @@
 # [x] Scale 200 g by 3
 # [x] Keep the original quantity after multiplication
 # [x] Compare equal and unequal quantities
-# [ ] Distinguish grams from ounces
+# [x] Distinguish grams from ounces
 # [ ] Add two gram quantities
 # [ ] Convert a mixed sum to grams
 # [ ] Scale a mixed sum (A8, optional; left for later)
