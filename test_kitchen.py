@@ -45,3 +45,10 @@ def test_adding_grams(left, right, expected):
 
 def test_identity_conversion():
     assert Converter().reduce(grams(500), "g") == grams(500)
+
+
+def test_combining_grams_and_ounces():
+    conversion = Converter()
+    conversion.add_rate("oz", "g", 28)
+    expression = grams(200).plus(ounces(1))
+    assert conversion.reduce(expression, "g") == grams(228)
