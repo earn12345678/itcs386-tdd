@@ -41,3 +41,7 @@ def test_unit_is_part_of_the_value():
 def test_adding_grams(left, right, expected):
     expression = grams(left).plus(grams(right))
     assert Converter().reduce(expression, "g") == grams(expected)
+
+
+def test_identity_conversion():
+    assert Converter().reduce(grams(500), "g") == grams(500)
