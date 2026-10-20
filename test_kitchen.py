@@ -23,3 +23,8 @@ def test_scaling_can_reuse_the_original():
     assert tripled.amount == 600
     assert doubled.amount == 400
     assert flour.amount == 200
+
+
+def test_quantity_values_are_equal():
+    assert Quantity(200) == Quantity(200)
+    assert Quantity(200) != Quantity(300)
