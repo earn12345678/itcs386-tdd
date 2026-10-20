@@ -1,7 +1,7 @@
 # Test list
 # [x] Scale 200 g by 3
 # [x] Keep the original quantity after multiplication
-# [ ] Compare equal and unequal quantities
+# [x] Compare equal and unequal quantities
 # [ ] Distinguish grams from ounces
 # [ ] Add two gram quantities
 # [ ] Convert a mixed sum to grams
