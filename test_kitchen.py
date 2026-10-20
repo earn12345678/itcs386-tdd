@@ -52,3 +52,9 @@ def test_combining_grams_and_ounces():
     conversion.add_rate("oz", "g", 28)
     expression = grams(200).plus(ounces(1))
     assert conversion.reduce(expression, "g") == grams(228)
+
+
+def test_two_ounces_reduce_to_fifty_six_grams():
+    conversion = Converter()
+    conversion.add_rate("oz", "g", 28)
+    assert conversion.reduce(ounces(2), "g") == grams(56)
