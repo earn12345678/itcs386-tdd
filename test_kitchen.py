@@ -44,4 +44,4 @@ def test_adding_grams(left, right, expected):
 
 
 def test_identity_conversion():
-    assert Converter().reduce(grams(500), "g") == grams(501)
+    assert Converter().reduce(grams(500), "g") == grams(500)
