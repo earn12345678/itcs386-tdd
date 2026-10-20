@@ -33,3 +33,8 @@ def test_quantity_values_are_equal():
 
 def test_unit_is_part_of_the_value():
     assert grams(1) != ounces(1)
+
+
+def test_adding_grams():
+    expression = grams(200).plus(grams(300))
+    assert Converter().reduce(expression, "g") == grams(500)
