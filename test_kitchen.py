@@ -12,11 +12,14 @@ from kitchen import Quantity
 
 def test_scale_flour():
     flour = Quantity(200)
-    flour.times(3)
-    assert flour.amount == 600
+    scaled = flour.times(3)
+    assert scaled.amount == 600
 
 
-def test_scale_flour_by_two():
+def test_scaling_can_reuse_the_original():
     flour = Quantity(200)
-    flour.times(2)
-    assert flour.amount == 400
+    tripled = flour.times(3)
+    doubled = flour.times(2)
+    assert tripled.amount == 600
+    assert doubled.amount == 400
+    assert flour.amount == 200
