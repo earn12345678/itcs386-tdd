@@ -21,3 +21,13 @@ def test_century_1900():
 ])
 def test_calendar_partitions(year, leap):
     assert is_leap(year) == leap
+
+
+def test_zero_year():
+    with pytest.raises(ValueError, match="1 or later"):
+        is_leap(0)
+
+
+def test_year_before_one():
+    with pytest.raises(ValueError, match="1 or later"):
+        is_leap(-100)
