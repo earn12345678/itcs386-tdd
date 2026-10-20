@@ -1,5 +1,5 @@
 # Test list
-# [ ] Scale 200 g by 3
+# [x] Scale 200 g by 3
 # [ ] Keep the original quantity after multiplication
 # [ ] Compare equal and unequal quantities
 # [ ] Distinguish grams from ounces
