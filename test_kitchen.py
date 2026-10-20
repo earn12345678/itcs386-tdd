@@ -8,7 +8,9 @@
 # [ ] Scale a mixed sum (A8, optional; left for later)
 # Later: hashability, if quantities are ever used as dictionary keys.
 
-from kitchen import Converter, Quantity, grams, ounces
+import pytest
+
+from kitchen import Converter, grams, ounces
 
 
 def test_scale_flour():
@@ -35,6 +37,7 @@ def test_unit_is_part_of_the_value():
     assert grams(1) != ounces(1)
 
 
-def test_adding_grams():
-    expression = grams(200).plus(grams(300))
-    assert Converter().reduce(expression, "g") == grams(500)
+@pytest.mark.parametrize("left, right, expected", [(200, 300, 500), (20, 25, 45)])
+def test_adding_grams(left, right, expected):
+    expression = grams(left).plus(grams(right))
+    assert Converter().reduce(expression, "g") == grams(expected)
