@@ -3,7 +3,7 @@
 # [x] Keep the original quantity after multiplication
 # [x] Compare equal and unequal quantities
 # [x] Distinguish grams from ounces
-# [ ] Add two gram quantities
+# [x] Add two gram quantities
 # [ ] Convert a mixed sum to grams
 # [ ] Scale a mixed sum (A8, optional; left for later)
 # Later: hashability, if quantities are ever used as dictionary keys.
