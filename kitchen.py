@@ -13,7 +13,7 @@ class Quantity:
         return Sum(self, other)
 
     def reduce(self, converter, unit):
-        return self
+        return Quantity(self.amount * converter.rate(self.unit, unit), unit)
 
     def times(self, multiplier):
         return Quantity(self.amount * multiplier, self.unit)
@@ -51,4 +51,6 @@ class Sum:
         self.right = right
 
     def reduce(self, converter, unit):
-        return Quantity(self.left.amount + self.right.amount, unit)
+        left = converter.reduce(self.left, unit)
+        right = converter.reduce(self.right, unit)
+        return Quantity(left.amount + right.amount, unit)
