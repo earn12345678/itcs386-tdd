@@ -6,6 +6,7 @@
 # [ ] Add two gram quantities
 # [ ] Convert a mixed sum to grams
 # [ ] Scale a mixed sum (A8, optional; left for later)
+# Later: hashability, if quantities are ever used as dictionary keys.
 
 from kitchen import Quantity
 
@@ -13,16 +14,16 @@ from kitchen import Quantity
 def test_scale_flour():
     flour = Quantity(200)
     scaled = flour.times(3)
-    assert scaled.amount == 600
+    assert scaled == Quantity(600)
 
 
 def test_scaling_can_reuse_the_original():
     flour = Quantity(200)
     tripled = flour.times(3)
     doubled = flour.times(2)
-    assert tripled.amount == 600
-    assert doubled.amount == 400
-    assert flour.amount == 200
+    assert tripled == Quantity(600)
+    assert doubled == Quantity(400)
+    assert flour == Quantity(200)
 
 
 def test_quantity_values_are_equal():
