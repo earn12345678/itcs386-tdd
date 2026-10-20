@@ -28,8 +28,18 @@ def ounces(amount):
 
 
 class Converter:
+    def __init__(self):
+        self.rates = {}
+
     def add_rate(self, from_unit, to_unit, rate):
-        pass
+        if from_unit not in self.rates:
+            self.rates[from_unit] = {}
+        self.rates[from_unit][to_unit] = rate
+
+    def rate(self, from_unit, to_unit):
+        if from_unit == to_unit:
+            return 1
+        return self.rates[from_unit][to_unit]
 
     def reduce(self, source, unit):
         return source.reduce(unit)
