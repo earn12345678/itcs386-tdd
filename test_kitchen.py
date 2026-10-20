@@ -8,7 +8,7 @@
 # [ ] Scale a mixed sum (A8, optional; left for later)
 # Later: hashability, if quantities are ever used as dictionary keys.
 
-from kitchen import Quantity, grams, ounces
+from kitchen import Converter, Quantity, grams, ounces
 
 
 def test_scale_flour():
