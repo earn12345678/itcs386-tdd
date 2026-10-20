@@ -6,4 +6,4 @@ def test_leap_year_2024():
 
 
 def test_century_1900():
-    assert is_leap(1900)
+    assert not is_leap(1900)
