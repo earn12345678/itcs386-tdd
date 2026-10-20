@@ -8,28 +8,28 @@
 # [ ] Scale a mixed sum (A8, optional; left for later)
 # Later: hashability, if quantities are ever used as dictionary keys.
 
-from kitchen import Quantity
+from kitchen import Quantity, grams, ounces
 
 
 def test_scale_flour():
-    flour = Quantity(200, "g")
+    flour = grams(200)
     scaled = flour.times(3)
-    assert scaled == Quantity(600, "g")
+    assert scaled == grams(600)
 
 
 def test_scaling_can_reuse_the_original():
-    flour = Quantity(200, "g")
+    flour = grams(200)
     tripled = flour.times(3)
     doubled = flour.times(2)
-    assert tripled == Quantity(600, "g")
-    assert doubled == Quantity(400, "g")
-    assert flour == Quantity(200, "g")
+    assert tripled == grams(600)
+    assert doubled == grams(400)
+    assert flour == grams(200)
 
 
 def test_quantity_values_are_equal():
-    assert Quantity(200, "g") == Quantity(200, "g")
-    assert Quantity(200, "g") != Quantity(300, "g")
+    assert grams(200) == grams(200)
+    assert grams(200) != grams(300)
 
 
 def test_unit_is_part_of_the_value():
-    assert Quantity(1, "g") != Quantity(1, "oz")
+    assert grams(1) != ounces(1)

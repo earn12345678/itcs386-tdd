@@ -11,3 +11,11 @@ class Quantity:
 
     def times(self, multiplier):
         return Quantity(self.amount * multiplier, self.unit)
+
+
+def grams(amount):
+    return Quantity(amount, "g")
+
+
+def ounces(amount):
+    return Quantity(amount, "oz")
