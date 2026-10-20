@@ -12,20 +12,24 @@ from kitchen import Quantity
 
 
 def test_scale_flour():
-    flour = Quantity(200)
+    flour = Quantity(200, "g")
     scaled = flour.times(3)
-    assert scaled == Quantity(600)
+    assert scaled == Quantity(600, "g")
 
 
 def test_scaling_can_reuse_the_original():
-    flour = Quantity(200)
+    flour = Quantity(200, "g")
     tripled = flour.times(3)
     doubled = flour.times(2)
-    assert tripled == Quantity(600)
-    assert doubled == Quantity(400)
-    assert flour == Quantity(200)
+    assert tripled == Quantity(600, "g")
+    assert doubled == Quantity(400, "g")
+    assert flour == Quantity(200, "g")
 
 
 def test_quantity_values_are_equal():
-    assert Quantity(200) == Quantity(200)
-    assert Quantity(200) != Quantity(300)
+    assert Quantity(200, "g") == Quantity(200, "g")
+    assert Quantity(200, "g") != Quantity(300, "g")
+
+
+def test_unit_is_part_of_the_value():
+    assert Quantity(1, "g") != Quantity(1, "oz")
